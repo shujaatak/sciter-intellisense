@@ -3,7 +3,7 @@
   "displayName": "Sciter IntelliSense",
   "description": "Provides IntelliSense support for Sciter-specific JavaScript, CSS, and HTML.",
   "version": "1.0.0",
-  "publisher": "Shujaat Ali Khan",
+  "publisher": "ShujaatAliKhan",
   "license": "GPL-3.0",
   "homepage": "https://github.com/shujaatak/sciter-intellisense",
   "repository": {
