@@ -1,7 +1,11 @@
 # Sciter IntelliSense
 
 Adds IntelliSense for **Sciter-specific JavaScript, HTML, and CSS** in Visual Studio Code.
-Automatically downloads and manages Sciter’s `.d.ts` files for accurate auto-completion, hover info, and Sciter-specific CSS suggestions.
+
+### Important Note
+
+IntelliSense works only in **separate `.html`, `.css`, and `.js` files**.
+It does **not** apply inside embedded `<script>` or `<style>` tags in a `.html` file.
 
 ---
 
@@ -9,7 +13,7 @@ Automatically downloads and manages Sciter’s `.d.ts` files for accurate auto-c
 
 To enable Sciter IntelliSense in your **HTML**, **CSS**, and **JavaScript** files:
 
-1. Open your **project folder** in VS Code
+1. Open your **Project Folder** in VS Code
 2. Open the **Command Palette**
 
    * Windows/Linux: **Ctrl + Shift + P**
@@ -54,11 +58,6 @@ This will:
   * Sciter JavaScript APIs (`Element`, `Window`, `Graphics`, events, behaviors…)
   * Sciter-specific CSS properties
   * Sciter HTML tags & attributes
-
-### ⚠ Important Note
-
-IntelliSense works only in **separate `.html`, `.css`, and `.js` files**.
-It does **not** apply inside embedded `<script>` or `<style>` tags in a `.html` file.
 
 ### 3. Update / Repair IntelliSense
 
