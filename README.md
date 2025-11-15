@@ -1,15 +1,35 @@
 # Sciter IntelliSense
 
 Adds IntelliSense for **Sciter-specific JavaScript, HTML, and CSS** in Visual Studio Code.
-Automatically downloads and manages Sciter’s `.d.ts` files for accurate auto-completion, hover info, and CSS suggestions.
+Automatically downloads and manages Sciter’s `.d.ts` files for accurate auto-completion, hover info, and Sciter-specific CSS suggestions.
 
 ---
 
 ## Quick Start
 
-### 1. Install the extension
+To enable Sciter IntelliSense in your **HTML**, **CSS**, and **JavaScript** files:
 
-Available on the VS Code Marketplace.
+1. Open your **project folder** in VS Code
+2. Open the **Command Palette**
+
+   * Windows/Linux: **Ctrl + Shift + P**
+   * macOS: **Cmd + Shift + P**
+3. Run:
+
+   ```
+   Sciter: Initialize IntelliSense
+   ```
+
+That’s it — IntelliSense is now active in your `.html`, `.css`, and `.js` files.
+
+---
+
+## Detailed Setup
+
+### 1. Open your project root in VS Code
+
+The extension installs its typings inside the folder **you currently have open**.
+If you run the commands in the wrong folder, no IntelliSense will be configured.
 
 ### 2. Initialize IntelliSense
 
@@ -26,24 +46,29 @@ Sciter: Initialize IntelliSense
 
 This will:
 
-* Create a `sciter_modules` folder in your workspace
+* Create a `sciter_modules` folder in the project root
 * Download all Sciter type definitions (`*.d.ts`)
-* Add `jsconfig.json` if missing
+* Create `jsconfig.json` if missing
 * Enable IntelliSense for:
 
-  * `Element`, `Window`, `Graphics`, `Event`, `Document`, behaviors…
-  * Sciter CSS properties
-  * Sciter DOM and window APIs
+  * Sciter JavaScript APIs (`Element`, `Window`, `Graphics`, events, behaviors…)
+  * Sciter-specific CSS properties
+  * Sciter HTML tags & attributes
+
+### ⚠ Important Note
+
+IntelliSense works only in **separate `.html`, `.css`, and `.js` files**.
+It does **not** apply inside embedded `<script>` or `<style>` tags in a `.html` file.
 
 ### 3. Update / Repair IntelliSense
 
-At any time, open the Command Palette and run:
+To refresh the setup in the **same project root folder**, run:
 
 ```
 Sciter: Update IntelliSense
 ```
 
-This resets the setup by deleting the old `sciter_modules` folder and downloading a fresh copy.
+This deletes the existing `sciter_modules` directory and downloads a clean copy.
 
 ---
 
@@ -76,8 +101,8 @@ Produces a `.vsix` file in the project root.
 Create a publisher:
 [https://marketplace.visualstudio.com/publishers](https://marketplace.visualstudio.com/publishers)
 
-Then upload the packaged `.vsix`
-or publish using:
+Upload the `.vsix` file
+**or publish using CLI:**
 
 ```bash
 vsce publish
@@ -88,4 +113,4 @@ vsce publish
 ## Credits
 
 * **[@MustafaHi](https://github.com/MustafaHi)** — original Sciter typings
-* **[@patrick](https://sciter.com/forums/topic/typescript/#post-77670)** — TypeScript support insights
+* **[@patrick](https://sciter.com/forums/topic/typescript/#post-77670)** — Sciter TypeScript guidance
