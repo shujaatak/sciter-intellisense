@@ -1,0 +1,68 @@
+{
+  "name": "sciter-intellisense",
+  "displayName": "Sciter IntelliSense",
+  "description": "Provides IntelliSense support for Sciter-specific JavaScript, CSS, and HTML.",
+  "version": "1.0.0",
+  "publisher": "Shujaat Ali Khan",
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/shujaatak/sciter-intellisense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shujaatak/sciter-intellisense"
+  },
+  "bugs": {
+    "url": "https://github.com/shujaatak/sciter-intellisense/issues"
+  },
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other",
+    "Linters",
+    "Snippets"
+  ],
+  "keywords": [
+    "sciter",
+    "sciterjs",
+    "intellisense"
+  ],
+  "icon": "icon.png",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "browser": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "SciterJS.initIntellisense",
+        "title": "Sciter: Initialize IntelliSense"
+      },
+      {
+        "command": "SciterJS.updateIntellisense",
+        "title": "Sciter: Update IntelliSense"
+      }
+    ],
+    "css": {
+      "customData": [
+        "./css.css-data.json"
+      ]
+    },
+    "html": {
+      "customData": [
+        "./html.html-data.json"
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "@types/vscode": "^1.105.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {}
+}
