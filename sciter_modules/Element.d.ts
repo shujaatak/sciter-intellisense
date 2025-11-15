@@ -1,3 +1,4 @@
+// test
 interface Element extends Node, Behaviors {
     /** Get element matching the css selector */
     $(query: string): Element;
